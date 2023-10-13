@@ -1,0 +1,11 @@
+<h2>To do list</h2>
+<table border="1">
+    <thead><th>To do</th></thead>
+    <tr *ngFor="let toDo of todos; let i = index">
+        <td (click)="onSelect(i)" [class.selected]="i==selectedCase">{{toDo.title}}</td>
+        <td><button (click)="todos.splice(i,1)">delete</button></td>
+    </tr>
+</table>
+<div class="form">
+    <input type="text" placeholder="введите дело" [(ngModel)]="inputValue"/><button (click)="add()">add</button><button (click)="update()">update</button>
+</div>
